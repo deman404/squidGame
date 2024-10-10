@@ -6,7 +6,9 @@ import model from "../../images/bg-one.png";
 import { IoClose } from "react-icons/io5";
 import React, { useEffect, useRef, useState } from "react";
 import Mask from "../../images/mask.webp";
+import useWindowSize from "../../../Hooks/useWindowSize";
 function TopPage() {
+  const size = useWindowSize();
   const words = [
     "You will find all squid game products",
     " | ",

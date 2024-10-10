@@ -21,3 +21,21 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+/* width */
+::-webkit-scrollbar {
+  background: #181920;
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #181920;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #181920;
+  border-radius: 5px;
+}
