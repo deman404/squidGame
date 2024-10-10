@@ -1,0 +1,54 @@
+.header {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10.5px);
+  -webkit-backdrop-filter: blur(10.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  position: absolute;
+  top: 10px;
+  left: 25%;
+  right: 25%;
+  padding: 5px;
+  width: 50%;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.logo {
+  width: 70px;
+  filter: invert(100%);
+}
+.listNav ul{
+    list-style: none;
+    display: flex;
+}
+.listNav li {
+    margin-right: 8px;
+}
+.listNav a{
+    text-decoration: none;
+    color: aliceblue;
+    padding: 10px;
+}
+.listNav a:hover{
+    background-color: #00000055;
+    border-radius: 10px;
+    transition: all ease-in 0.3s;
+}
+
+.btn{
+    background-color: #fff;
+    width: 80px;
+    height: 35px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn:hover{
+    background-color: #181920;
+    color: #fff;
+    transition: all ease-in-out 0.3s;
+
+}

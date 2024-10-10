@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "SquidGameFont"; /* You can name this anything */
+  src: url("../../font/squid.ttf") format("truetype"); /* Path to your font file */
+  font-weight: bold; /* You can change this if necessary */
+  font-style: normal; /* You can change this if necessary */
+}
+.mainTop {
+  width: 100vw;
+  display: flex;
+  overflow-y: hidden;
+}
+
+.bgOne {
+  filter: grayscale(50%);
+  max-width: 400px;
+  max-height: 550px;
+}
+.textSide {
+  position: absolute;
+  left: 20%;
+  top: 5%;
+  width: 100%;
+}
+.textSide p {
+  color: aliceblue;
+  font-family: 'SquidGameFont', sans-serif;
+  font-size: 100px;
+  width: 100px;
+  margin-bottom: 0;
+}
