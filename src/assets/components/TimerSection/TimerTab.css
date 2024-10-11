@@ -1,12 +1,42 @@
-.HeaderTitle{
-    color: aliceblue;
-    font-size: 80px;
-    font-family: "SquidGameFont", sans-serif;
+.HeaderTitle {
+  color: aliceblue;
+  font-size: 80px;
+  font-family: "SquidGameFont", sans-serif;
+  display: flex;
+  justify-content: center;
+  margin-top: 85px;
+  margin-bottom: 5px;
+}
+.TimerSidePage {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
 
 }
-.TimerSidePage{
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.TimeCountainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+.Houre
+,.Min
+,.Sec {
+  font-size: 120px;
+  padding: 10px 5px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6.5px);
+  -webkit-backdrop-filter: blur(6.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: aliceblue;
+  font-family: "SquidGameFont", sans-serif;
+  margin: 0px 10px;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+
 }

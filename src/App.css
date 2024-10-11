@@ -1,20 +1,28 @@
+/* Basic styling */
 .mainPage {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
 
-  }
-  
-  .side {
-    flex: 1;
-    height: calc(100vh - 80px); /* Example: subtract header height */
+header {
+  z-index: 10;
+  position: relative;
+  height: 80px; /* Set the height of your header */
+}
 
-  }
-  
-  header {
-    z-index: 10;
-    position: relative;
-    height: 80px; /* Set the height of your header */
+.side {
+  flex: 1;
+  height: calc(100vh - 80px); /* Adjust for header height */
+  overflow-y: scroll; /* Enable vertical scroll */
+  overflow-x: hidden; /* Ensure no horizontal scroll */
+  scroll-snap-type: y mandatory; /* Enable smooth vertical scrolling between sections */
+  scroll-behavior: smooth; /* Makes scrolling smooth */
+}
 
-  }
-  
+.TopPage, .TimerTab {
+  width: 100vw; /* Full width */
+  height: 100vh; /* Full height for each section */
+  scroll-snap-align: start; /* Each section snaps into view */
+}
+

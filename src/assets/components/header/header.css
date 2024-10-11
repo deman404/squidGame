@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
 .header {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10.5px);
@@ -15,6 +16,8 @@
   justify-content: space-around;
   align-items: center;
   z-index: 10;
+  font-family: "Play", sans-serif;
+  font-weight: bold;
 }
 
 .logo {
