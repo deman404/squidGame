@@ -8,11 +8,13 @@
   .side {
     flex: 1;
     height: calc(100vh - 80px); /* Example: subtract header height */
+
   }
   
   header {
     z-index: 10;
     position: relative;
     height: 80px; /* Set the height of your header */
+
   }
   

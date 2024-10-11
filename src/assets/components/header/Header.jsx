@@ -9,7 +9,7 @@ function Header() {
 
   return (
     <div
-      className="header"
+      className="header TopAnimation"
       style={{
         width: size.width > 800 ? "50%" : "90%",
         left: size.width > 800 ? "25%" : "2.5%",
