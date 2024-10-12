@@ -126,9 +126,12 @@ function TopPage() {
 
       <IoClose color="#2a2a83" size={200} className="ioCloseIcon" />
 
-      <div className="mouse Animation">
-        <CgMouse size={20} color="#ffffff" />
+      <div className="mouseContainer Animation">
+        <CgMouse size={20} color="#ffffff" className="mouse"/>
+        <p style={{color:"#fff" , fontSize:"10px"}}>Scroll Down</p>
+
       </div>
+
     </animated.div>
   );
 }

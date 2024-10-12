@@ -187,16 +187,22 @@
 
 /* Mouse icon styling */
 .mouse {
+  
+  border: 1px solid #ffffff;
+  padding: 10px 5px;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+
+}
+.mouseContainer{
   position: absolute;
   bottom: 3%;
   left: 50%;
-  transform: translateX(-50%);
-  border: 1px solid #ffffff;
-  padding: 10px;
-  border-radius: 5px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  transition: 0.3s ease-in-out;
+  align-items: center;
+  transform: translateX(-50%);
   z-index: 10;
   opacity: 0.5;
 

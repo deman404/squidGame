@@ -7,7 +7,7 @@
   margin-top: 85px;
   margin-bottom: 5px;
 }
-.MagicTitle{
+.MagicTitle {
   color: aliceblue;
   font-size: 2vw;
   font-family: "SquidGameFont", sans-serif;
@@ -15,7 +15,6 @@
   justify-content: center;
   margin-top: 0px;
   margin-bottom: 0px;
-
 }
 .TimerSidePage {
   background-color: rgba(0, 0, 0, 0.5);
@@ -24,7 +23,6 @@
   flex-direction: column;
   width: 100vw;
   height: 100vh;
-
 }
 .TimeCountainer {
   display: flex;
@@ -32,9 +30,9 @@
   justify-content: center;
   padding: 10px;
 }
-.Houre
-,.Min
-,.Sec {
+.Houre,
+.Min,
+.Sec {
   font-size: 6vw;
   padding: 10px 5px;
   background: rgba(255, 255, 255, 0.1);
@@ -48,20 +46,19 @@
   width: 250px;
   display: flex;
   justify-content: center;
-
 }
 
-
-.cardMagic{
+.cardMagic {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 10px;
 }
 
-
 .back {
-  background-color: #151515;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6.5px);
+  -webkit-backdrop-filter: blur(6.5px);
   width: 200px;
   height: 300px;
   border-radius: 5px;
@@ -72,12 +69,8 @@
   margin: 5px 15px;
 }
 
-
-
-
 .back-content {
   position: absolute;
-  background-color: #151515;
   border-radius: 5px;
   color: white;
   display: flex;
@@ -103,9 +96,43 @@
     transform: translateX(0px);
   }
 }
-.fadeRightAnimation{
-  animation: fadeRight 1s ease;
+@keyframes fadeUP {
+  from {
+    transform: translateY(215px);
+  }
+
+  to {
+    transform: translateY(0px);
+  }
 }
-.fadeLeftAnimation{
-  animation: fadeLeft 1s ease;
+.fadeRightAnimation {
+  animation: fadeRight 1s ease-in-out;
+}
+.fadeLeftAnimation {
+  animation: fadeLeft 1s ease-in-out;
+}
+.fadeUPAnimation {
+  animation: fadeUP 1s ease-in-out;
+}
+
+.btnColect{
+  background-color: aliceblue;
+  padding: 10px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "SquidGameFont", sans-serif;
+  margin-top: 15px;
+}
+.btnColect p{
+  margin: 0;
+}
+.btnColect:hover{
+  background-color: rgb(155, 2, 2);
+  color: aliceblue;
+  transition: all 0.3s ease-in-out;
+}
+
+.GiftCard h1{
+  font-family: "SquidGameFont", sans-serif;
+
 }

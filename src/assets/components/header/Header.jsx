@@ -27,7 +27,7 @@ function Header() {
             <a href="#">Home</a>
           </li>
           <li>
-            <a href="#">About</a>
+            <a href="#">Last Deal</a>
           </li>
           <li>
             <a href="#">Get Product</a>
