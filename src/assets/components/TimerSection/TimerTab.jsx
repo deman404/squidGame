@@ -4,9 +4,10 @@ import { useSpring, animated } from "@react-spring/web";
 import useWindowSize from "../../../Hooks/useWindowSize";
 import { TbTriangleFilled, TbRectangleFilled } from "react-icons/tb";
 import { FaCircle } from "react-icons/fa";
-import triangle from "../../../../public/triangle.png";
-import square from "../../../../public/square.png";
-import circle from "../../../../public/circle.png";
+import triangle from "../../images/triangle.png";
+import square from "../../images/square.png";
+import circle from "../../images/circle.png";
+
 function TimerTab() {
   const size = useWindowSize();
   const [hours, setHours] = useState(1); // Start with 1 hour
@@ -17,10 +18,10 @@ function TimerTab() {
   const timerTabRef = useRef(null); // Reference for the TimerTab component
   const [isVisible, setVisible] = useState(false); // State to show the GiftCard
   const [showGiftCard, setShowGiftCard] = useState(false); // State to handle GiftCard visibility
-
-  // Refs for each card element
+  const RandomGiftValue = [5, 30, 10, 40, 20, 70, 90];
   const leftCardRef = useRef(null);
   const rightCardRef = useRef(null);
+  const [randomGift, setRandomGift] = useState(null); // State to store the current random value
 
   // Spring animation properties
   const fadeProps = useSpring({
@@ -28,6 +29,16 @@ function TimerTab() {
     transform: fade ? "translateY(0px)" : "translateY(20px)",
     config: { tension: 280, friction: 60 },
   });
+
+  // Generate a random gift when the component loads
+  useEffect(() => {
+    setRandomGift(getRandomGift());
+  }, []);
+
+  const getRandomGift = () => {
+    const randomIndex = Math.floor(Math.random() * RandomGiftValue.length);
+    return RandomGiftValue[randomIndex];
+  };
 
   // Timer logic
   useEffect(() => {
@@ -73,14 +84,12 @@ function TimerTab() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Add animation class when the element is visible
             entry.target.classList.add(
               entry.target === leftCardRef.current
                 ? "fadeLeftAnimation"
                 : "fadeRightAnimation"
             );
           } else {
-            // Remove animation class when the element is not visible
             entry.target.classList.remove(
               entry.target === leftCardRef.current
                 ? "fadeLeftAnimation"
@@ -89,7 +98,7 @@ function TimerTab() {
           }
         });
       },
-      { threshold: 0.1 } // Trigger when 10% of the card is visible
+      { threshold: 0.1 }
     );
 
     if (leftCardRef.current) cardObserver.observe(leftCardRef.current);
@@ -153,30 +162,42 @@ function TimerTab() {
           <div
             ref={leftCardRef}
             className="back gift2"
-            style={{ height: size.width > 1300 ? 300 : 250 ,width:size.width > 1300 ? 200 : 150 }}
+            style={{
+              height: size.width > 1300 ? 300 : 250,
+              width: size.width > 1300 ? 200 : 150,
+            }}
             onClick={handleCardClick} // Trigger GiftCard on click
           >
             <div className="back-content">
-              <img src={circle} alt="mask" style={{width:80}}/>
+              <img src={circle} alt="mask" style={{ width: 80 }} />
             </div>
           </div>
           <div
             className="back gift1"
-            style={{ height: size.width > 1300 ? 300 : 250 , width:size.width > 1300 ? 200 : 150 }}
+            style={{
+              height: size.width > 1300 ? 300 : 250,
+              width: size.width > 1300 ? 200 : 150,
+            }}
             onClick={handleCardClick} // Trigger GiftCard on click
           >
             <div className="back-content">
-            <img src={triangle} alt="mask" style={{width:80}}/>
+              <img src={triangle} alt="mask" style={{ width: 80 }} />
             </div>
           </div>
           <div
             ref={rightCardRef}
             className="back gift3"
-            style={{ height: size.width > 1300 ? 300 : 250,width:size.width > 1300 ? 200 : 150  }}
-            onClick={handleCardClick} // Trigger GiftCard on click
+            style={{
+              height: size.width > 1300 ? 300 : 250,
+              width: size.width > 1300 ? 200 : 150,
+            }}
+            onClick={() => {
+              handleCardClick();
+              setRandomGift(getRandomGift());
+            }} // Trigger GiftCard on click
           >
             <div className="back-content">
-            <img src={square} alt="mask" style={{width:80}}/>
+              <img src={square} alt="mask" style={{ width: 80 }} />
             </div>
           </div>
         </div>
@@ -197,18 +218,16 @@ function TimerTab() {
               alignItems: "center",
               backdropFilter: "blur(6.5px)",
               WebkitBackdropFilter: "blur(6.5px)",
-              fadeProps,
+              ...fadeProps,
             }}
           >
-            <h1 style={{ color: "#fff", fontSize: 25, }}>
-              You Win
-            </h1>
+            <h1 style={{ color: "#fff", fontSize: 25 }}>You Win</h1>
             <div
               className="back fadeUPAnimation "
-              style={{ height: size.width > 800 ? 300 : 300 ,marginTop: 0 }}
+              style={{ height: size.width > 800 ? 300 : 300, marginTop: 0 }}
             >
               <div className="back-content">
-                <FaCircle color="#ffffff" size={50} />
+                {randomGift !== null && <p style={{fontSize:30,fontWeight:'bold'}}>{randomGift}%</p>}
               </div>
             </div>
             <div

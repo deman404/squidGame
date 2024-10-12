@@ -57,7 +57,7 @@
 }
 
 .back {
-  background: rgba(255, 0, 0, 0.409);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(6.5px);
   -webkit-backdrop-filter: blur(6.5px);
   width: 200px;
@@ -78,6 +78,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.back-content p{
+  font-family: "SquidGameFont", sans-serif;
+
 }
 @keyframes fadeRight {
   from {
