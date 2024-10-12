@@ -1,6 +1,6 @@
 .HeaderTitle {
   color: aliceblue;
-  font-size: 5vw;
+  font-size: 25px;
   font-family: "SquidGameFont", sans-serif;
   display: flex;
   justify-content: center;
@@ -9,7 +9,7 @@
 }
 .MagicTitle {
   color: aliceblue;
-  font-size: 2vw;
+  font-size: 25px;
   font-family: "SquidGameFont", sans-serif;
   display: flex;
   justify-content: center;
@@ -33,7 +33,7 @@
 .Houre,
 .Min,
 .Sec {
-  font-size: 6vw;
+  font-size: 25px;
   padding: 10px 5px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(6.5px);
@@ -44,6 +44,7 @@
   font-family: "SquidGameFont", sans-serif;
   margin: 0px 10px;
   width: 250px;
+  height: auto;
   display: flex;
   justify-content: center;
 }
@@ -56,11 +57,11 @@
 }
 
 .back {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 0, 0, 0.409);
   backdrop-filter: blur(6.5px);
   -webkit-backdrop-filter: blur(6.5px);
   width: 200px;
-  height: 300px;
+  height: 200px;
   border-radius: 5px;
   overflow: hidden;
   justify-content: center;

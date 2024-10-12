@@ -103,9 +103,7 @@ function TopPage() {
 
       <span className="shap1"></span>
 
-      <div className="shap2">
-        <IoClose color="rgb(167, 2, 2)" size={200} />
-      </div>
+      
 
       <div className="barDown">
         <div className="wordTrain" style={{ transform: `translateX(${-offset}%)` }}>
@@ -124,7 +122,6 @@ function TopPage() {
         </div>
       )}
 
-      <IoClose color="#2a2a83" size={200} className="ioCloseIcon" />
 
       <div className="mouseContainer Animation">
         <CgMouse size={20} color="#ffffff" className="mouse"/>

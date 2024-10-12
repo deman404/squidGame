@@ -4,7 +4,9 @@ import { useSpring, animated } from "@react-spring/web";
 import useWindowSize from "../../../Hooks/useWindowSize";
 import { TbTriangleFilled, TbRectangleFilled } from "react-icons/tb";
 import { FaCircle } from "react-icons/fa";
-
+import triangle from "../../../../public/triangle.png";
+import square from "../../../../public/square.png";
+import circle from "../../../../public/circle.png";
 function TimerTab() {
   const size = useWindowSize();
   const [hours, setHours] = useState(1); // Start with 1 hour
@@ -111,15 +113,38 @@ function TimerTab() {
         className="TimerSidePage"
         style={{ fadeProps, justifyContent: size.width > 800 ? "" : "center" }}
       >
-        <h1 className="HeaderTitle">Last Deal</h1>
+        <h1
+          className="HeaderTitle"
+          style={{ fontSize: size.width > 1300 ? 60 : 25 }}
+        >
+          Last Deal
+        </h1>
         <div className="TimeCountainer">
-          <div className="Houre">
+          <div
+            className="Houre"
+            style={{
+              fontSize: size.width > 1300 ? 80 : 18,
+              width: size.width > 1300 ? 150 : 100,
+            }}
+          >
             <span>{hours.toString().padStart(2, "0")}</span>
           </div>
-          <div className="Min">
+          <div
+            className="Min"
+            style={{
+              fontSize: size.width > 1300 ? 80 : 18,
+              width: size.width > 1300 ? 150 : 100,
+            }}
+          >
             <span>{minutes.toString().padStart(2, "0")}</span>
           </div>
-          <div className="Sec">
+          <div
+            className="Sec"
+            style={{
+              fontSize: size.width > 1300 ? 80 : 18,
+              width: size.width > 1300 ? 150 : 100,
+            }}
+          >
             <span>{seconds.toString().padStart(2, "0")}</span>
           </div>
         </div>
@@ -128,30 +153,30 @@ function TimerTab() {
           <div
             ref={leftCardRef}
             className="back gift2"
-            style={{ height: size.width > 800 ? 300 : 200 }}
+            style={{ height: size.width > 1300 ? 300 : 250 ,width:size.width > 1300 ? 200 : 150 }}
             onClick={handleCardClick} // Trigger GiftCard on click
           >
             <div className="back-content">
-              <TbTriangleFilled color="#ffffff" size={50} />
+              <img src={circle} alt="mask" style={{width:80}}/>
             </div>
           </div>
           <div
             className="back gift1"
-            style={{ height: size.width > 800 ? 300 : 200 }}
+            style={{ height: size.width > 1300 ? 300 : 250 , width:size.width > 1300 ? 200 : 150 }}
             onClick={handleCardClick} // Trigger GiftCard on click
           >
             <div className="back-content">
-              <FaCircle color="#ffffff" size={50} />
+            <img src={triangle} alt="mask" style={{width:80}}/>
             </div>
           </div>
           <div
             ref={rightCardRef}
             className="back gift3"
-            style={{ height: size.width > 800 ? 300 : 200 }}
+            style={{ height: size.width > 1300 ? 300 : 250,width:size.width > 1300 ? 200 : 150  }}
             onClick={handleCardClick} // Trigger GiftCard on click
           >
             <div className="back-content">
-              <TbRectangleFilled color="#ffffff" size={50} />
+            <img src={square} alt="mask" style={{width:80}}/>
             </div>
           </div>
         </div>
@@ -173,19 +198,24 @@ function TimerTab() {
               backdropFilter: "blur(6.5px)",
               WebkitBackdropFilter: "blur(6.5px)",
               fadeProps,
-
             }}
           >
-            <h1 style={{ color: "#fff", fontSize: "5vW",margin:0 }} >You Win</h1>
+            <h1 style={{ color: "#fff", fontSize: 25, }}>
+              You Win
+            </h1>
             <div
               className="back fadeUPAnimation "
-              style={{ height: size.width > 800 ? 300 : 300 }}
+              style={{ height: size.width > 800 ? 300 : 300 ,marginTop: 0 }}
             >
               <div className="back-content">
                 <FaCircle color="#ffffff" size={50} />
               </div>
             </div>
-            <div className="btnColect" onClick={() => setShowGiftCard(false)} style={fadeProps}>
+            <div
+              className="btnColect"
+              onClick={() => setShowGiftCard(false)}
+              style={fadeProps}
+            >
               <p>Collect</p>
             </div>
           </div>
