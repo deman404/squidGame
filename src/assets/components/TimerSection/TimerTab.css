@@ -1,11 +1,21 @@
 .HeaderTitle {
   color: aliceblue;
-  font-size: 80px;
+  font-size: 5vw;
   font-family: "SquidGameFont", sans-serif;
   display: flex;
   justify-content: center;
   margin-top: 85px;
   margin-bottom: 5px;
+}
+.MagicTitle{
+  color: aliceblue;
+  font-size: 2vw;
+  font-family: "SquidGameFont", sans-serif;
+  display: flex;
+  justify-content: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+
 }
 .TimerSidePage {
   background-color: rgba(0, 0, 0, 0.5);
@@ -25,7 +35,7 @@
 .Houre
 ,.Min
 ,.Sec {
-  font-size: 120px;
+  font-size: 6vw;
   padding: 10px 5px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(6.5px);
@@ -39,4 +49,63 @@
   display: flex;
   justify-content: center;
 
+}
+
+
+.cardMagic{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+
+.back {
+  background-color: #151515;
+  width: 200px;
+  height: 300px;
+  border-radius: 5px;
+  overflow: hidden;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin: 5px 15px;
+}
+
+
+
+
+.back-content {
+  position: absolute;
+  background-color: #151515;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes fadeRight {
+  from {
+    transform: translateX(-215px);
+  }
+
+  to {
+    transform: translateX(0px);
+  }
+}
+@keyframes fadeLeft {
+  from {
+    transform: translateX(215px);
+  }
+
+  to {
+    transform: translateX(0px);
+  }
+}
+.fadeRightAnimation{
+  animation: fadeRight 1s ease;
+}
+.fadeLeftAnimation{
+  animation: fadeLeft 1s ease;
 }

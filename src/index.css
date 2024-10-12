@@ -24,18 +24,18 @@ body {
 
 /* width */
 ::-webkit-scrollbar {
-  background: #181920;
+  background: rgba(0, 0, 0, 0.5);
   width: 5px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #181920;
+  background: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #181920;
+  background: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
 }

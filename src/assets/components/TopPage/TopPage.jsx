@@ -5,6 +5,7 @@ import "./TopPage.css";
 import model from "../../images/bg-one.png";
 import Mask from "../../images/mask.webp";
 import useWindowSize from "../../../Hooks/useWindowSize";
+import { useSpring, animated } from "@react-spring/web";
 
 function TopPage() {
   const [direction, setDirection] = useState("");
@@ -14,39 +15,86 @@ function TopPage() {
     " | ",
     "the best store in 2025",
   ];
-
-  const wordTrainRef = useRef(null);
-  const animationRef = useRef();
+  const [scrollY, setScrollY] = useState(0);
   const [offset, setOffset] = useState(100);
+  const animationRef = useRef();
 
-  // Animation effect for word train
+  // Ref for the TopPage component
+  const topPageRef = useRef(null);
+
+  // Handle scroll and update scrollY state
+  const handleScroll = () => {
+    setScrollY(window.scrollY);
+  };
+
+  // Animation effect for word train and scroll
   useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
     const animateTrain = () => {
       setOffset((prevOffset) => (prevOffset <= -100 ? 100 : prevOffset - 0.1));
       animationRef.current = requestAnimationFrame(animateTrain);
     };
     animationRef.current = requestAnimationFrame(animateTrain);
-    return () => cancelAnimationFrame(animationRef.current);
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      cancelAnimationFrame(animationRef.current);
+    };
   }, []);
 
+  // Fade-in animation properties
+  const [fade, setFade] = useState(false);
+  const fadeProps = useSpring({
+    opacity: fade ? 1 : 0,
+    transform: fade ? 'translateY(0px)' : 'translateY(-20px)',
+    config: { tension: 280, friction: 60 },
+  });
+
+  // Intersection Observer to trigger animation on visibility
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setFade(true); // Fade in when in view
+        } else {
+          setFade(false); // Fade out when not in view
+        }
+      },
+      { threshold: 0.1 } // Trigger when 10% of the component is visible
+    );
+
+    if (topPageRef.current) {
+      observer.observe(topPageRef.current);
+    }
+
+    return () => {
+      if (topPageRef.current) {
+        observer.unobserve(topPageRef.current);
+      }
+    };
+  }, [topPageRef]);
+
+  // Scroll animation properties
+  const props = useSpring({
+    opacity: scrollY < 300 ? 1 - scrollY / 300 : 0,
+    transform: `translateY(${scrollY / 2}px)`,
+  });
+
+  // Mouse move direction handling
   const handleMouseMove = (e) => {
     const { left, top, width, height } = e.target.getBoundingClientRect();
     const mouseX = e.clientX - left;
     const mouseY = e.clientY - top;
 
-    if (mouseX < width / 2 && mouseY < height / 2) {
-      setDirection("top-left");
-    } else if (mouseX >= width / 2 && mouseY < height / 2) {
-      setDirection("top-right");
-    } else if (mouseX < width / 2 && mouseY >= height / 2) {
-      setDirection("bottom-left");
-    } else if (mouseX >= width / 2 && mouseY >= height / 2) {
-      setDirection("bottom-right");
-    }
+    setDirection(
+      mouseX < width / 2 
+        ? (mouseY < height / 2 ? "top-left" : "bottom-left") 
+        : (mouseY < height / 2 ? "top-right" : "bottom-right")
+    );
   };
 
   return (
-    <div className="mainTop">
+    <animated.div ref={topPageRef} className="mainTop" style={fadeProps}>
       <img src={model} alt="model" className="bgOne fadeAnimation" />
       <div className="textSide">
         <p className="name1">Squid</p>
@@ -60,15 +108,9 @@ function TopPage() {
       </div>
 
       <div className="barDown">
-        <div
-          className="wordTrain"
-          ref={wordTrainRef}
-          style={{ transform: `translateX(${-offset}%)` }}
-        >
+        <div className="wordTrain" style={{ transform: `translateX(${-offset}%)` }}>
           {words.map((word, index) => (
-            <span key={index} className="word">
-              {word}
-            </span>
+            <span key={index} className="word">{word}</span>
           ))}
         </div>
       </div>
@@ -82,16 +124,12 @@ function TopPage() {
         </div>
       )}
 
-      <IoClose
-        color="#2a2a83"
-        size={200}
-        className="ioCloseIcon"
-      />
+      <IoClose color="#2a2a83" size={200} className="ioCloseIcon" />
 
       <div className="mouse Animation">
         <CgMouse size={20} color="#ffffff" />
       </div>
-    </div>
+    </animated.div>
   );
 }
 
