@@ -3,12 +3,6 @@ function Items({ image, title, lastPrix, prix }) {
   return (
     <div
     className="trensparentBg"
-      style={{
-        width: 180,
-        height: 250,
-        borderRadius: 10,
-        padding:10
-      }}
     >
       <img
         src={image}

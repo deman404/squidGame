@@ -1,42 +1,48 @@
 .StoreContainer {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  
-  .TitleStore {
-    font-family: "SquidGameFont", sans-serif;
-    color: aliceblue;
-    margin-bottom: 20px;
-  }
-  
-  .StoreItems {
-    width: 80%;
-    display: flex;
-    overflow-x: scroll; /* Enable horizontal scrolling */
-    padding: 10px;
-    gap: 15px; /* Adds space between items */
-  }
-  
-  .StoreItems::-webkit-scrollbar {
-    height: 8px; /* Customize scrollbar height */
-  }
-  
-  .StoreItems::-webkit-scrollbar-thumb {
-    background-color: #6362ed; /* Scrollbar color */
-    border-radius: 10px;
-  }
-  
-  .StoreItems::-webkit-scrollbar-track {
-    background-color: rgba(255, 255, 255, 0.1); /* Scrollbar track color */
-  }
-  .trensparentBg{
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(6.5px);
-    -webkit-backdrop-filter: blur(6.5px);
-  
-  }
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.TitleStore {
+  font-family: "SquidGameFont", sans-serif;
+  color: aliceblue;
+  margin-bottom: 20px;
+}
+
+div.StoreItems {
+  width: 90%;
+  padding: 10px;
+  gap: 15px; /* Adds space between items */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: hidden;
+  white-space: nowrap;
+  display: flex; /* Align items horizontally */
+}
+.StoreItems::-webkit-scrollbar {
+  height: 0px; /* Customize scrollbar height */
+}
+
+.StoreItems::-webkit-scrollbar-thumb {
+  background-color: #6262ed00; /* Scrollbar color */
+
+  border-radius: 10px;
+}
+
+.StoreItems::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0); /* Scrollbar track color */
+}
+.trensparentBg {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6.5px);
+  -webkit-backdrop-filter: blur(6.5px);
+  width: 180px;
+  height: 250px;
+  padding: 10px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
