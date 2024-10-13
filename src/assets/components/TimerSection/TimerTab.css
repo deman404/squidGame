@@ -79,9 +79,8 @@
   justify-content: center;
   align-items: center;
 }
-.back-content p{
+.back-content p {
   font-family: "SquidGameFont", sans-serif;
-
 }
 @keyframes fadeRight {
   from {
@@ -120,7 +119,7 @@
   animation: fadeUP 1s ease-in-out;
 }
 
-.btnColect{
+.btnColect {
   background-color: aliceblue;
   padding: 10px 25px;
   border-radius: 10px;
@@ -128,16 +127,48 @@
   font-family: "SquidGameFont", sans-serif;
   margin-top: 15px;
 }
-.btnColect p{
+.btnColect p {
   margin: 0;
 }
-.btnColect:hover{
+.btnColect:hover {
   background-color: rgb(155, 2, 2);
   color: aliceblue;
   transition: all 0.3s ease-in-out;
 }
 
-.GiftCard h1{
+.GiftCard h1 {
   font-family: "SquidGameFont", sans-serif;
+}
 
+.Sold {
+  width: 20px;
+  height: 50px;
+  position: absolute;
+  top: 20%;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aliceblue;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  transition: width 1s ease-in-out;
+  cursor: pointer;
+}
+.iconsSold {
+  color: red;
+  display: none;
+  transition: display 1s ease-in-out;
+}
+.openIcon {
+  display: block;
+}
+.Sold:hover {
+  width: 100px;
+  .openIcon {
+    display: none;
+  }
+  .iconsSold {
+    display: block;
+  }
 }

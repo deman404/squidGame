@@ -4,6 +4,7 @@ import "./App.css"; // Assuming you have some basic styling
 import TopPage from "./assets/components/TopPage/TopPage";
 import TimerTab from "./assets/components/TimerSection/TimerTab";
 import CustomCursor from "./Hooks/CustomCursor";
+import Store from "./assets/components/Store/Store";
 export default function App() {
   return (
     <div className="mainPage">
@@ -14,6 +15,9 @@ export default function App() {
         </div>
         <div className="TimerTab">
           <TimerTab />
+        </div>
+        <div className="StoreTab">
+          <Store />
         </div>
       </div>
       <CustomCursor />

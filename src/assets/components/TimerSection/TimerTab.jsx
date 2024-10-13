@@ -7,6 +7,11 @@ import { FaCircle } from "react-icons/fa";
 import triangle from "../../images/triangle.png";
 import square from "../../images/square.png";
 import circle from "../../images/circle.png";
+import { RiCheckboxBlankFill } from "react-icons/ri";
+import { LuChevronLeft } from "react-icons/lu";
+
+
+
 
 function TimerTab() {
   const size = useWindowSize();
@@ -227,7 +232,11 @@ function TimerTab() {
               style={{ height: size.width > 800 ? 300 : 300, marginTop: 0 }}
             >
               <div className="back-content">
-                {randomGift !== null && <p style={{fontSize:30,fontWeight:'bold'}}>{randomGift}%</p>}
+                {randomGift !== null && (
+                  <p style={{ fontSize: 30, fontWeight: "bold" }}>
+                    {randomGift}%
+                  </p>
+                )}
               </div>
             </div>
             <div
@@ -240,6 +249,12 @@ function TimerTab() {
           </div>
         )}
       </animated.div>
+      <div className="Sold" style={{display:size.width > 800 ? "flex" : "none" }}>
+      <LuChevronLeft size={20} className="openIcon"/>
+        <FaCircle  size={20} className="iconsSold"/>
+        <TbTriangleFilled  size={20} className="iconsSold"/>
+        <RiCheckboxBlankFill  size={20} className="iconsSold"/>
+        </div>
     </>
   );
 }

@@ -20,7 +20,7 @@ header {
   scroll-behavior: smooth; /* Makes scrolling smooth */
 }
 
-.TopPage, .TimerTab {
+.TopPage, .TimerTab,.StoreTab {
   width: 100vw; /* Full width */
   height: 100vh; /* Full height for each section */
   scroll-snap-align: start; /* Each section snaps into view */
